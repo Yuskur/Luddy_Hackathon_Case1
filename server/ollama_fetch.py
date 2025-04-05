@@ -3,6 +3,7 @@ import json
 import re
 from pydantic import BaseModel
 
+
 # Define the Pydantic model for each idea
 class Idea(BaseModel):
     title: str
@@ -42,8 +43,22 @@ Effort Reason: <Explanation for the Effort rating>
 Rank: <rank>
 
 Please rate each idea and provide the results in the specified format.
+
+Here are the following ideas to rank:
+
 """
 
+with open('ideas.json', 'r') as file:
+    ideas_data = json.load(file)
+
+for idea in ideas_data:
+    prompt = prompt + idea['title'] + " Description: " + idea['description'] + "\n"
+    #title = idea['title']
+    #description = idea['description']
+    #print(f"Title: {title}\nDescription: {description}\n") 
+
+
+print(prompt)
 # Call Ollama's API to get a response
 response = ollama.chat(model='mistral', messages=[
     {

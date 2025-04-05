@@ -1,26 +1,130 @@
 [
     {
-        "title": "Implement a new feature for user account management",
-        "roi": 6,
-        "roi_reason": "This feature could potentially increase user engagement and retention, but its impact on revenue directly is not as significant as other features such as improved search functionality or real-time notifications.",
-        "effort": 8,
-        "effort_reason": "Implementing a new feature requires time for development, testing, and deployment, especially if it involves integrating with other systems or creating new user interfaces.",
-        "rank": 3
+        "title": "AI Document Summarizer",
+        "roi": 8,
+        "roi_reason": "Reduces the time spent reading lengthy documents, increasing productivity and potentially reducing costs associated with manual labor.",
+        "effort": 7,
+        "effort_reason": "Requires significant development resources to create an effective summarization tool, but can be implemented using existing AI and natural language processing techniques.",
+        "rank": 8
     },
     {
-        "title": "Add real-time notifications to the app",
-        "roi": 7,
-        "roi_reason": "Real-time notifications can drive immediate engagement and potentially lead to increased transactions or subscriptions, making it a valuable investment. However, the exact ROI will depend on the specific use case and audience behavior.",
-        "effort": 7,
-        "effort_reason": "Developing real-time notifications requires integrating with push notification services, designing relevant content, and setting up triggers based on user actions or behaviors within the app.",
+        "title": "Cross-Department Collaboration Hub",
+        "roi": 9,
+        "roi_reason": "Improves communication and collaboration across departments, reducing miscommunication and increasing efficiency, which can lead to cost savings and increased revenue.",
+        "effort": 8,
+        "effort_reason": "Requires a significant amount of development effort to build a platform that integrates with various tools and meets the needs of multiple departments, but the benefits make it worthwhile.",
         "rank": 2
     },
     {
-        "title": "Improve search functionality",
+        "title": "Smart Employee Onboarding",
+        "roi": 7,
+        "roi_reason": "Streamlines the onboarding process, reducing time spent by HR and increasing productivity of new hires, but the ROI may not be immediately evident.",
+        "effort": 6,
+        "effort_reason": "Requires development resources to build an AI assistant that can handle personalization and automation of the onboarding process.",
+        "rank": 7
+    },
+    {
+        "title": "Customer Sentiment Dashboard",
+        "roi": 9,
+        "roi_reason": "Provides real-time insights into customer feedback, allowing for quick response and resolution of issues, potentially increasing customer satisfaction and revenue.",
+        "effort": 7,
+        "effort_reason": "Requires development resources to integrate with various communication channels and implement AI analysis capabilities.",
+        "rank": 3
+    },
+    {
+        "title": "VR Training Simulations",
         "roi": 8,
-        "roi_reason": "A more efficient search function can significantly improve user experience, making it easier for users to find what they're looking for and increasing the likelihood of them making a purchase or completing other desired actions.",
+        "roi_reason": "Reduces the risks associated with high-risk procedures by allowing for safe practice in a virtual environment, potentially saving costs associated with accidents and injuries.",
         "effort": 9,
-        "effort_reason": "Improving search functionality involves understanding user behavior, designing an effective search algorithm, and ensuring its integration with various parts of the application for optimal results. This can be resource-intensive and time-consuming.",
+        "effort_reason": "Requires significant development resources to create realistic VR simulations, but the benefits make it worthwhile.",
+        "rank": 5
+    },
+    {
+        "title": "Predictive Maintenance System",
+        "roi": 8,
+        "roi_reason": "Reduces downtime and repair costs by predicting maintenance needs before failures occur, potentially increasing productivity and reducing costs.",
+        "effort": 7,
+        "effort_reason": "Requires development resources to implement IoT sensors and develop prediction algorithms.",
+        "rank": 6
+    },
+    {
+        "title": "Contract Analysis Tool",
+        "roi": 8,
+        "roi_reason": "Reduces the time spent on contract review by flagging risks and extracting key obligations, potentially reducing legal costs and mitigating risk.",
+        "effort": 9,
+        "effort_reason": "Requires development resources to create an effective AI tool that can handle complex legal language and provide accurate analysis.",
+        "rank": 4
+    },
+    {
+        "title": "Carbon Footprint Tracker",
+        "roi": 7,
+        "roi_reason": "Provides insights into the company's environmental impact, allowing for targeted improvements to reduce costs associated with environmental regulation and improve public image.",
+        "effort": 6,
+        "effort_reason": "Requires development resources to build an app that tracks environmental data and provides recommendations for improvement.",
+        "rank": 9
+    },
+    {
+        "title": "Meeting Efficiency Assistant",
+        "roi": 8,
+        "roi_reason": "Reduces time spent on meetings by taking notes, assigning action items, and following up after meetings, potentially increasing productivity.",
+        "effort": 7,
+        "effort_reason": "Requires development resources to build an effective meeting assistant that can handle various meeting formats and provide useful follow-up actions.",
+        "rank": 10
+    },
+    {
+        "title": "Internal Knowledge Wiki",
+        "roi": 7,
+        "roi_reason": "Reduces the time spent searching for information by providing a centralized knowledge base, potentially increasing productivity and reducing costs associated with knowledge loss.",
+        "effort": 6,
+        "effort_reason": "Requires development resources to build a searchable database of company knowledge and implement AI-powered recommendations.",
+        "rank": 11
+    },
+    {
+        "title": "Automated Data Cleanup",
+        "roi": 9,
+        "roi_reason": "Improves the accuracy of data analysis by finding and fixing inconsistencies in company databases, potentially leading to better decision-making and increased revenue.",
+        "effort": 8,
+        "effort_reason": "Requires development resources to build a system that can automatically find and fix data inconsistencies.",
         "rank": 1
+    },
+    {
+        "title": "Customer Journey Visualizer",
+        "roi": 8,
+        "roi_reason": "Provides insights into how customers interact with products across touchpoints, allowing for targeted improvements to increase customer satisfaction and revenue.",
+        "effort": 7,
+        "effort_reason": "Requires development resources to integrate with various data sources and implement AI analysis capabilities.",
+        "rank": 2
+    },
+    {
+        "title": "Team Collaboration Tool",
+        "roi": 7,
+        "roi_reason": "Improves collaboration within teams by providing a centralized platform for communication and project management, potentially increasing productivity.",
+        "effort": 8,
+        "effort_reason": "Requires development resources to build an effective team collaboration tool that can handle various communication formats and project management tasks.",
+        "rank": 12
+    },
+    {
+        "title": "Time Tracking Tool",
+        "roi": 7,
+        "roi_reason": "Provides insights into how time is spent within the company, allowing for targeted improvements to increase productivity and reduce costs.",
+        "effort": 6,
+        "effort_reason": "Requires development resources to build a time tracking tool that can accurately track time spent on various tasks.",
+        "rank": 13
+    },
+    {
+        "title": "Employee Engagement Survey",
+        "roi": 7,
+        "roi_reason": "Provides insights into employee engagement levels, allowing for targeted improvements to increase productivity and reduce costs associated with employee turnover.",
+        "effort": 6,
+        "effort_reason": "Requires development resources to build an effective employee engagement survey and analyze the results.",
+        "rank": 14
+    },
+    {
+        "title": "Productivity Dashboard",
+        "roi": 8,
+        "roi_reason": "Provides insights into productivity levels within the company, allowing for targeted improvements to increase efficiency and reduce costs.",
+        "effort": 7,
+        "effort_reason": "Requires development resources to build a productivity dashboard that can accurately track productivity across various departments and teams.",
+        "rank": 8
     }
 ]

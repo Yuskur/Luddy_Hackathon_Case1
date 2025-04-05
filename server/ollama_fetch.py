@@ -15,11 +15,13 @@ class Idea(BaseModel):
 
 # Define the prompt to Ollama with the desired structured response format
 prompt = """
-Rank the following ideas based on ROI (Return on Investment) and Effort:
+Rank the following ideas based on ROI (Return on Investment) and Effort relative to the other ideas, dont just use the rank to increment the ideas:
+Do not reuse rank numbers, first count the number of ideas then only use rank numbers once.
+You must rank all ideas. Do not output anything that isn't said in the format below
 Please respond in the following format for each idea:
 
 Idea 1:
-Title: Implement a new feature for user account management
+Title: Ex: Implement a new feature for user account management
 ROI: <ROI>/10
 ROI Reason: <Explanation for the ROI rating>
 Effort: <Effort>/10
@@ -27,7 +29,7 @@ Effort Reason: <Explanation for the Effort rating>
 Rank: <rank>
 
 Idea 2:
-Title: Add real-time notifications to the app
+Title: <Title>
 ROI: <ROI>/10
 ROI Reason: <Explanation for the ROI rating>
 Effort: <Effort>/10
@@ -35,7 +37,7 @@ Effort Reason: <Explanation for the Effort rating>
 Rank: <rank>
 
 Idea 3:
-Title: Improve search functionality
+Title: <Title>
 ROI: <ROI>/10
 ROI Reason: <Explanation for the ROI rating>
 Effort: <Effort>/10
@@ -48,17 +50,16 @@ Here are the following ideas to rank:
 
 """
 
-with open('ideas.json', 'r') as file:
+with open('server/ideas.json', 'r') as file:
     ideas_data = json.load(file)
 
 for idea in ideas_data:
-    prompt = prompt + idea['title'] + " Description: " + idea['description'] + "\n"
+    prompt = prompt + idea['title'] + " - Description: " + idea['description'] + "\n"
     #title = idea['title']
     #description = idea['description']
     #print(f"Title: {title}\nDescription: {description}\n") 
 
 
-print(prompt)
 # Call Ollama's API to get a response
 response = ollama.chat(model='mistral', messages=[
     {
@@ -79,7 +80,7 @@ roi_pattern = r"ROI:\s*(\d)/10"
 roi_reason_pattern = r"ROI Reason:\s*(.*?)\n"
 effort_pattern = r"Effort:\s*(\d)/10"
 effort_reason_pattern = r"Effort Reason:\s*(.*?)\n"
-rank_pattern = r"Rank:\s*(\d)"
+rank_pattern = r"Rank:\s*(\d+)"
 
 # Split by idea (each idea is separated by a new line)
 ideas_raw = response_content.split("\n\n")  # Split by double newline

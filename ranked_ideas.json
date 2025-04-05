@@ -2,19 +2,25 @@
     {
         "title": "Implement a new feature for user account management",
         "roi": 6,
-        "effort": 7,
-        "rank": 1
+        "roi_reason": "This feature could potentially increase user engagement and retention, but its impact on revenue directly is not as significant as other features such as improved search functionality or real-time notifications.",
+        "effort": 8,
+        "effort_reason": "Implementing a new feature requires time for development, testing, and deployment, especially if it involves integrating with other systems or creating new user interfaces.",
+        "rank": 3
     },
     {
         "title": "Add real-time notifications to the app",
-        "roi": 8,
+        "roi": 7,
+        "roi_reason": "Real-time notifications can drive immediate engagement and potentially lead to increased transactions or subscriptions, making it a valuable investment. However, the exact ROI will depend on the specific use case and audience behavior.",
         "effort": 7,
+        "effort_reason": "Developing real-time notifications requires integrating with push notification services, designing relevant content, and setting up triggers based on user actions or behaviors within the app.",
         "rank": 2
     },
     {
         "title": "Improve search functionality",
-        "roi": 9,
-        "effort": 8,
-        "rank": 3
+        "roi": 8,
+        "roi_reason": "A more efficient search function can significantly improve user experience, making it easier for users to find what they're looking for and increasing the likelihood of them making a purchase or completing other desired actions.",
+        "effort": 9,
+        "effort_reason": "Improving search functionality involves understanding user behavior, designing an effective search algorithm, and ensuring its integration with various parts of the application for optimal results. This can be resource-intensive and time-consuming.",
+        "rank": 1
     }
 ]

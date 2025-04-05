@@ -45,7 +45,7 @@ function HomePage() {
             <p className="idea-description">{idea.idea}</p>
             <button
               className="more-info-button"
-              onClick={() => navigate(`/more-info/${idea.id}`)}
+              onClick={() => navigate(`/more-info/`)}
             >
               More Info
             </button>

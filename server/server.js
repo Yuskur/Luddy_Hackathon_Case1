@@ -1,10 +1,10 @@
 const express = require('express')
 require('dotenv').config();
-const { MongoClient, ServerApiVersion, Binary, ObjectId } = require('mongodb');
+const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const app = express()
 const port = 5001
-app.use(express.json()) // This is for parsing incoming json payloads
+app.use(express.json()) // This is for parsing incoming JSON payloads
 
 const ollama_data = require('../ranked_ideas.json')
 
@@ -15,27 +15,28 @@ const client = new MongoClient(process.env.MONGO_URI, {
       strict: true,
       deprecationErrors: true,
     }
-  });
-  
-  async function run() {
-    try {
-      // Connect the client to the server	(optional starting in v4.7)
-      await client.connect();
-      // Send a ping to confirm a successful connection
-      await client.db("admin").command({ ping: 1 });
-      console.log("Pinged your deployment. You successfully connected to MongoDB!");
-    } catch(error){
-      console.log('ERROR: ', error);
-    }
-  }
+});
 
-//Work to return the json data
-app.use('/ranked-data', (res, req) => {
+async function run() {
+    try {
+        // Connect the client to the server
+        await client.connect();
+        // Send a ping to confirm a successful connection
+        await client.db("admin").command({ ping: 1 });
+        console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    } catch (error) {
+        console.log('ERROR: ', error);
+    }
+}
+
+// Work to return the json data
+app.get('/ranked-data', (req, res) => {
     
+    res.json(ollama_data); // Send the ranked data as a JSON response
 })
 
 run().catch(console.dir);
 
 app.listen(port, () => {
-    console.log('listening')
-})
+    console.log('Server is listening on port', port);
+});

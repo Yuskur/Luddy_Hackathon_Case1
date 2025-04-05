@@ -1,0 +1,10 @@
+# Node modules (should be installed fresh in the container)
+node_modules
+npm-debug.log
+
+# Local build output
+dist
+build
+
+# OS/system junk
+.DS_Store

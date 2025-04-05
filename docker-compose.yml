@@ -1,0 +1,25 @@
+version: '3'
+services:
+  client:
+    build:
+      context: ./client
+    volumes:
+      - ./client:/app  # Sync client code for hot reloading
+    ports:
+      - "3000:80"      # Expose React app on port 3000
+    environment:
+      - NODE_ENV=development
+    command: ["npm", "run", "start"]  # React hot reload
+    depends_on:
+      - server
+
+  server:
+    build:
+      context: ./server
+    volumes:
+      - ./server:/app  # Sync server code for hot reloading
+    ports:
+      - "5000:5000"    # Expose Node.js server on port 5000
+    environment:
+      - NODE_ENV=development
+    command: ["npm", "run", "dev"]  # Use nodemon for hot reload

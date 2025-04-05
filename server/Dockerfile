@@ -9,6 +9,6 @@ RUN npm install
 #copying the current directory to the container
 COPY . .
 #port
-EXPOSE 5000
+EXPOSE 5001
 #command to start the server
 CMD ["npm", "run", "dev"]

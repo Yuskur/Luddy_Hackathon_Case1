@@ -1,0 +1,50 @@
+.homepage {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .idea-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .idea-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .idea-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .user-name {
+    color: #007bff;
+  }
+  
+  .roi-effort {
+    color: #555;
+  }
+  
+  .idea-description {
+    margin-bottom: 10px;
+  }
+  
+  .more-info-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .more-info-button:hover {
+    background-color: #218838;
+  }

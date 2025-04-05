@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Implement a new feature for user account management",
+        "roi": 6,
+        "effort": 7,
+        "rank": 1
+    },
+    {
+        "title": "Add real-time notifications to the app",
+        "roi": 8,
+        "effort": 7,
+        "rank": 2
+    },
+    {
+        "title": "Improve search functionality",
+        "roi": 9,
+        "effort": 8,
+        "rank": 3
+    }
+]

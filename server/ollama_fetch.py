@@ -26,6 +26,7 @@ Your task: Rank the following ideas based on ROI (Return on Investment) and Effo
 
 ⚠️ VERY IMPORTANT: FOLLOW THIS FORMAT EXACTLY. DO NOT ADD EXTRA INDENTATION, QUOTES, OR FORMATTING. 
 DO NOT OUTPUT ANYTHING ON THE SAME LINE AS THE IDEA NUMBER, AND THE TITLE SHOULD BE THE TITLE AND NOT THE DESCRIPTION
+USE THE SAME TITLE AS IS GIVEN AT THE BOTTOM
 
 FORMAT EXAMPLE:
 Idea 1:
@@ -55,16 +56,16 @@ with open('ideas.json', 'r') as file:
 
 idea_count = 0
 for idea in ideas_data["ideas"]:  # Accessing the list inside the dictionary
-    prompt = prompt + idea['title'] + " - Description: " + idea['description'] + "\n"
+    prompt = prompt + idea['title'] + " - Description: " + idea['description'] + "\n" # add the ideas onto the prompt
     idea_count += 1
-prompt = prompt + "Idea Count: " + str(idea_count)
+prompt = prompt + "Idea Count: " + str(idea_count) # pass the idea count to ollama
 
-weights = ideas_data.get("weights", {})
+weights = ideas_data.get("weights", {}) # get the weights from the ideas.json file
 roi_weight = weights.get("roiWeight", 5)
 effort_weight = weights.get("effortWeight", 5)
 
 prompt += f"\nUse these weights as guidance for the overall rank, first rank each idea and use the roi/effort weights to determine the final rank:\nROI Weight: {roi_weight}/10\nEffort Weight: {effort_weight}/10\n\n"
-
+# pass the weights to the prompt
 
 # Call Ollama's API to get a response
 response = ollama.chat(model='mistral', messages=[

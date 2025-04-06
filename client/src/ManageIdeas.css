@@ -1,0 +1,89 @@
+.manage-ideas {
+  padding: 20px;
+  width: 400px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.manage-ideas h2 {
+  text-align: center;
+}
+
+.weight-controls {
+  margin-bottom: 20px;
+}
+
+.slider-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.slider-group input {
+  width: 80%;
+}
+
+.idea-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.idea-card {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.idea-card input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
+}
+
+.add-idea {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  color: white;
+  font-size: 20px;
+  border: none;
+  margin: 20px auto;
+}
+
+.save-rank {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.save-rank:hover {
+  background-color: #0056b3;
+}

@@ -13,7 +13,8 @@ function HomePage() {
     fetch("http://localhost:5001/ranked-data")
       .then((response) => response.json())
       .then((data) => {
-        setIdeas(data); // Store the ranked ideas in state
+        const sortedIdeas = data.sort((a, b) => a.rank - b.rank);
+        setIdeas(sortedIdeas); // Store the ranked ideas in state
       })
       .catch((error) => {
         console.error("Error fetching data from backend:", error);
@@ -24,7 +25,7 @@ function HomePage() {
     return(
       <div key={idea.id} className="idea-card">
             <div className="idea-header">
-              <span className="user-name">{idea.rank}</span>
+              <span className="user-name">{"Rank: " + idea.rank}</span>
               <span className="roi-effort">
                 ROI: {idea.roi}/10 | Effort: {idea.effort}/10
               </span>

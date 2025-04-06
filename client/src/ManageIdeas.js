@@ -12,14 +12,12 @@ function ManageIdeas() {
   const [roiWeight, setRoiWeight] = useState(5);
   const [effortWeight, setEffortWeight] = useState(5);
 
-  // Fetch data from the backend when the component mounts
   useEffect(() => {
-    // Fetching ranked ideas from the backend API
-    fetch("http://localhost:5001/ranked-data")
+    // Fetching ideas from the backend API
+    fetch("http://localhost:5001/ideas-data")
       .then((response) => response.json())
       .then((data) => {
-        const sortedIdeas = data.sort((a, b) => a.rank - b.rank);
-        setIdeas(sortedIdeas); // Store the ranked ideas in state
+        setIdeas(data); // Store the ideas in state
       })
       .catch((error) => {
         console.error("Error fetching data from backend:", error);
@@ -49,23 +47,25 @@ function ManageIdeas() {
 
   // Function to save and rank ideas
   const handleSave = () => {
-    // Send the updated ideas to the backend to save them into ideas.json
-    fetch("http://localhost:5001/save-ideas", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ideas, roiWeight, effortWeight }), // Send the ideas and weights
+  // Send the updated ideas to the backend to save them into ideas.json
+  fetch("http://localhost:5001/save-ideas", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ ideas, roiWeight, effortWeight }), // Send the ideas and weights
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Ideas saved and ranked successfully:", data);
+      setIdeas(data.ideas); // Update the ideas state with ranked data
+      navigate("/HomePage/"); // Navigate to HomePage after saving and ranking
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Ideas saved successfully:", data);
-        navigate("/HomePage/");
-      })
-      .catch((error) => {
-        console.error("Error saving ideas:", error);
-      });
+    .catch((error) => {
+      console.error("Error saving ideas:", error);
+    });
 };
+
 
   return (
     <div className="manage-ideas">

@@ -17,7 +17,7 @@ class Idea(BaseModel):
 # Define the prompt to Ollama with the desired structured response format
 prompt = """
 Rank the following ideas based on ROI (Return on Investment) and Effort relative to the other ideas, dont just use the rank to increment the ideas:
-Do not reuse rank numbers, first count the number of ideas then only use rank numbers once.
+THIS IS A MUST: Do not reuse rank numbers, first count the number of ideas then only use rank numbers once.
 You must rank all ideas. Do not output anything that isn't said in the format below
 Please respond in the following format for each idea:
 
@@ -47,19 +47,19 @@ Rank: <rank>
 
 Please rate each idea and provide the results in the specified format.
 
-Here are the following ideas to rank:
+Here are the following ideas to rank followed by a number that is the number of ideas, please only use each number once:
 
 """
 
-with open('server/ideas.json', 'r') as file:
+# Load the ideas from the ideas.json file
+with open('ideas.json', 'r') as file:
     ideas_data = json.load(file)
 
+idea_count = 0
 for idea in ideas_data:
     prompt = prompt + idea['title'] + " - Description: " + idea['description'] + "\n"
-    #title = idea['title']
-    #description = idea['description']
-    #print(f"Title: {title}\nDescription: {description}\n") 
-
+    idea_count += 1  # Increment idea_count properly
+prompt = prompt + "Idea Count: " + str(idea_count)
 
 # Call Ollama's API to get a response
 response = ollama.chat(model='mistral', messages=[
@@ -116,9 +116,5 @@ for idx, idea_block in enumerate(ideas_raw, start=1):
     })
     
 
-# Save the structured ideas to a JSON file
-with open('ranked_ideas.json', 'w') as json_file:
-    json.dump(ideas, json_file, indent=4)  # Write to a file with pretty print
-
-print(response_content)
-print("Response saved to 'ranked_ideas.json'")
+# Print the ranked ideas in JSON format to stdout
+print(json.dumps(ideas, indent=4))  # Print the ideas as formatted JSON

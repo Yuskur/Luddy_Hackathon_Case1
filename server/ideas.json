@@ -1,102 +1,97 @@
 [
-    {
-      "id": "IDEA-001",
-      "title": "AI Document Summarizer",
-      "description": "Tool that automatically summarizes long documents and reports to save time."
-    },
-    {
-      "id": "IDEA-002",
-      "title": "Cross-Department Collaboration Hub",
-      "description": "Platform for teams to work together across departments without switching tools."
-    },
-    {
-      "id": "IDEA-003",
-      "title": "Smart Employee Onboarding",
-      "description": "AI assistant that personalizes onboarding for new hires and automates paperwork."
-    },
-    {
-      "id": "IDEA-004",
-      "title": "Customer Sentiment Dashboard",
-      "description": "Real-time analysis of customer feedback across all communication channels."
-    },
-    {
-      "id": "IDEA-005",
-      "title": "VR Training Simulations",
-      "description": "Virtual reality training for high-risk procedures in a safe environment."
-    },
-    {
-      "id": "IDEA-006",
-      "title": "Predictive Maintenance System",
-      "description": "IoT sensors that predict equipment maintenance needs before failures occur."
-    },
-    {
-      "id": "IDEA-007",
-      "title": "Contract Analysis Tool",
-      "description": "AI that reviews legal documents to flag risks and extract key obligations."
-    },
-    {
-      "id": "IDEA-008",
-      "title": "Carbon Footprint Tracker",
-      "description": "App that monitors company's environmental impact and suggests improvements."
-    },
-    {
-      "id": "IDEA-009",
-      "title": "Meeting Efficiency Assistant",
-      "description": "Tool that takes notes, assigns action items, and follows up after meetings."
-    },
-    {
-      "id": "IDEA-010",
-      "title": "Internal Knowledge Wiki",
-      "description": "Searchable database of company knowledge with AI-powered recommendations."
-    },
-    {
-      "id": "IDEA-011",
-      "title": "Automated Data Cleanup",
-      "description": "System that finds and fixes inconsistencies in company databases."
-    },
-    {
-      "id": "IDEA-012",
-      "title": "Customer Journey Visualizer",
-      "description": "Tool showing how customers interact with products across touchpoints."
-    },
-    {
-      "id": "IDEA-013",
-      "title": "Team Wellness Platform",
-      "description": "App tracking team wellbeing and suggesting personalized interventions."
-    },
-    {
-      "id": "IDEA-014",
-      "title": "Supply Chain Optimization",
-      "description": "AI system that reduces delays and costs in the supply chain."
-    },
-    {
-      "id": "IDEA-015",
-      "title": "One-Click Report Generator",
-      "description": "Tool creating custom reports from multiple data sources in seconds."
-    },
-    {
-      "id": "IDEA-016",
-      "title": "Skill-Based Team Matcher",
-      "description": "System pairing project needs with employee skills and availability."
-    },
-    {
-      "id": "IDEA-017",
-      "title": "Customer Support Chatbot",
-      "description": "AI assistant handling common customer questions and routing complex issues."
-    },
-    {
-      "id": "IDEA-018",
-      "title": "Mobile Workflow Approvals",
-      "description": "App allowing managers to review and approve requests from anywhere."
-    },
-    {
-      "id": "IDEA-019",
-      "title": "Automated Code Reviewer",
-      "description": "AI tool that checks code quality and security before deployment."
-    },
-    {
-      "id": "IDEA-020",
-      "title": "Digital Innovation Lab",
-      "description": "Platform for employees to submit, develop and test new ideas quickly."
-    }
-  ]
+  {
+    "id": "IDEA-001",
+    "title": "AI Document Summarizer",
+    "description": "Tool that automatically summarizes long documents and reports to save time."
+  },
+  {
+    "id": "IDEA-002",
+    "title": "Cross-Department Collaboration Hub",
+    "description": "Platform for teams to work together across departments without switching tools."
+  },
+  {
+    "id": "IDEA-003",
+    "title": "Smart Employee Onboarding",
+    "description": "AI assistant that personalizes onboarding for new hires and automates paperwork."
+  },
+  {
+    "id": "IDEA-004",
+    "title": "Customer Sentiment Dashboard",
+    "description": "Real-time analysis of customer feedback across all communication channels."
+  },
+  {
+    "id": "IDEA-005",
+    "title": "VR Training Simulations",
+    "description": "Virtual reality training for high-risk procedures in a safe environment."
+  },
+  {
+    "id": "IDEA-006",
+    "title": "Predictive Maintenance System",
+    "description": "IoT sensors that predict equipment maintenance needs before failures occur."
+  },
+  {
+    "id": "IDEA-007",
+    "title": "Contract Analysis Tool",
+    "description": "AI that reviews legal documents to flag risks and extract key obligations."
+  },
+  {
+    "id": "IDEA-008",
+    "title": "Carbon Footprint Tracker",
+    "description": "App that monitors company's environmental impact and suggests improvements."
+  },
+  {
+    "id": "IDEA-009",
+    "title": "Meeting Efficiency Assistant",
+    "description": "Tool that takes notes, assigns action items, and follows up after meetings."
+  },
+  {
+    "id": "IDEA-010",
+    "title": "Internal Knowledge Wiki",
+    "description": "Searchable database of company knowledge with AI-powered recommendations."
+  },
+  {
+    "id": "IDEA-011",
+    "title": "Automated Data Cleanup",
+    "description": "System that finds and fixes inconsistencies in company databases."
+  },
+  {
+    "id": "IDEA-012",
+    "title": "Customer Journey Visualizer",
+    "description": "Tool showing how customers interact with products across touchpoints."
+  },
+  {
+    "id": "IDEA-013",
+    "title": "Team Wellness Platform",
+    "description": "App tracking team wellbeing and suggesting personalized interventions."
+  },
+  {
+    "id": "IDEA-014",
+    "title": "Supply Chain Optimization",
+    "description": "AI system that reduces delays and costs in the supply chain."
+  },
+  {
+    "id": "IDEA-015",
+    "title": "One-Click Report Generator",
+    "description": "Tool creating custom reports from multiple data sources in seconds."
+  },
+  {
+    "id": "IDEA-016",
+    "title": "Skill-Based Team Matcher",
+    "description": "System pairing project needs with employee skills and availability."
+  },
+  {
+    "id": "IDEA-017",
+    "title": "Customer Support Chatbot",
+    "description": "AI assistant handling common customer questions and routing complex issues."
+  },
+  {
+    "id": "IDEA-018",
+    "title": "Mobile Workflow Approvals",
+    "description": "App allowing managers to review and approve requests from anywhere."
+  },
+  {
+    "id": "IDEA-019",
+    "title": "Automated Code Reviewer",
+    "description": "AI tool that checks code quality and security before deployment."
+  }
+]

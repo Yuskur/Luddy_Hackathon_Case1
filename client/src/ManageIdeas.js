@@ -5,7 +5,7 @@ import "./ManageIdeas.css";
 function ManageIdeas() {
   // State for storing ideas
   const [ideas, setIdeas] = useState([
-    { title: "", resources: "", roi: 5, effort: 5 },
+    { title: "", resources: "", description: "" },
   ]);
 
   // State for ROI and Effort weights (sliders)
@@ -38,7 +38,7 @@ function ManageIdeas() {
 
   // Function to add a new idea slot
   const addNewIdea = () => {
-    setIdeas([...ideas, { title: "", resources: "", roi: 5, effort: 5 }]);
+    setIdeas([...ideas, { title: "", resources: "", description: "" }]);
   };
 
   // Function to handle deletion of an idea
@@ -49,10 +49,23 @@ function ManageIdeas() {
 
   // Function to save and rank ideas
   const handleSave = () => {
-    // Call Python script or save logic here, passing roiWeight and effortWeight as parameters
-    console.log("Ideas saved and ranked with weights:", ideas, roiWeight, effortWeight);
-    navigate('/HomePage/');
-  };
+    // Send the updated ideas to the backend to save them into ideas.json
+    fetch("http://localhost:5001/save-ideas", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ideas, roiWeight, effortWeight }), // Send the ideas and weights
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Ideas saved successfully:", data);
+        navigate("/HomePage/");
+      })
+      .catch((error) => {
+        console.error("Error saving ideas:", error);
+      });
+};
 
   return (
     <div className="manage-ideas">
@@ -99,6 +112,12 @@ function ManageIdeas() {
               value={idea.resources}
               onChange={(e) => handleInputChange(e, index)}
               placeholder="Resources Needed"
+            />
+            <textarea
+              name="description"
+              value={idea.description}
+              onChange={(e) => handleInputChange(e, index)}
+              placeholder="Description"
             />
             {/* Delete button */}
             <button className="delete-button" onClick={() => handleDelete(index)}>

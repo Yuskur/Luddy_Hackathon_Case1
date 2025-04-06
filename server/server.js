@@ -1,54 +1,55 @@
-const express = require('express')
+const express = require('express');
 require('dotenv').config();
-//const { MongoClient, ServerApiVersion } = require('mongodb');
-
-const app = express()
-const port = 5001
-app.use(express.json()) // This is for parsing incoming JSON payloads
-
-const ollama_data = require('../ranked_ideas.json')
-
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-/*const client = new MongoClient(process.env.MONGO_URI, {
-    serverApi: {
-      version: ServerApiVersion.v1,
-      strict: true,
-      deprecationErrors: true,
-    }
-}); 
-
-async function run() {
-    try {
-        // Connect the client to the server
-        await client.connect();
-        // Send a ping to confirm a successful connection
-        await client.db("admin").command({ ping: 1 });
-        console.log("Pinged your deployment. You successfully connected to MongoDB!");
-    } catch (error) {
-        console.log('ERROR: ', error);
-    }
-}
-    */
-//run python script to call ollama and get rankings
-const spawn = require("child_process").spawn;
-const pythonProcess = spawn('python3',["server/ollama_fetch.py"]);
-
+const fs = require('fs');
+const path = require('path');
 const cors = require('cors');
+const app = express();
+const port = 5001;
+
+app.use(express.json()); // This is for parsing incoming JSON payloads
+
+// Allow CORS for frontend requests
 app.use(cors({
-    origin: 'http://localhost:3000',
-}));  // Enable CORS for all requests
+  origin: 'http://localhost:3000',
+}));  
 
+// Read initial ranked data from ideas.json
+const ollama_data = require(path.join(__dirname, '../ranked_ideas.json'));
 
-
-// Work to return the json data
+// Endpoint to fetch the ranked data
 app.get('/ranked-data', (req, res) => {
-    
-    res.json(ollama_data); // Send the ranked data as a JSON response
-})
+  res.json(ollama_data); // Send the ranked data as a JSON response
+});
 
-//run().catch(console.dir);
+// Endpoint to save ideas to ideas.json (without roi and effort)
+app.post('/save-ideas', (req, res) => {
+  console.log('Received request body:', req.body);  // Log the incoming request
 
+  const { ideas } = req.body;
 
+  if (!ideas || !Array.isArray(ideas)) {
+    console.error('Invalid ideas format:', ideas);  // Log invalid data format
+    return res.status(400).json({ error: 'Invalid ideas data format' });
+  }
+
+  // Sanitize data by removing `roi` and `effort`
+  const sanitizedIdeas = ideas.map((idea) => {
+    const { roi, effort, ...sanitizedIdea } = idea;
+    return sanitizedIdea; // Return the cleaned idea
+  });
+
+  // Save the cleaned ideas to the ideas.json file
+  fs.writeFile(path.join(__dirname, 'ideas.json'), JSON.stringify(sanitizedIdeas, null, 2), 'utf-8', (err) => {
+    if (err) {
+      console.error('Error saving ideas:', err); // Log error details
+      return res.status(500).json({ error: 'Error saving ideas' });
+    }
+    console.log("Ideas saved to ideas.json successfully");
+    res.json({ message: 'Ideas saved successfully', ideas: sanitizedIdeas });
+  });
+});
+
+// Start the server
 app.listen(port, () => {
-    console.log('Server is listening on port', port);
+  console.log('Server is listening on port', port);
 });

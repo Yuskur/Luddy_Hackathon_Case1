@@ -38,12 +38,17 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.idea-card input {
+.idea-card input,
+.idea-card textarea {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+textarea {
+  height: 100px; /* Adjust height for description */
 }
 
 .delete-button {

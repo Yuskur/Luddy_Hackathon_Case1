@@ -1,50 +1,83 @@
 .homepage {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-  
-  .idea-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .idea-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .idea-header {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .user-name {
-    color: #007bff;
-  }
-  
-  .roi-effort {
-    color: #555;
-  }
-  
-  .idea-description {
-    margin-bottom: 10px;
-  }
-  
-  .more-info-button {
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .more-info-button:hover {
-    background-color: #218838;
-  }
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.idea-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.idea-card {
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.idea-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.user-name {
+  color: #007bff;
+}
+
+.roi-effort {
+  color: #555;
+}
+
+.idea-description {
+  margin-bottom: 10px;
+}
+
+.more-info-button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.more-info-button:hover {
+  background-color: #218838;
+}
+
+.add-idea {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.add-idea-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #3b82f6;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.add-idea-button:hover {
+  background-color: #2563eb;
+  transform: scale(1.1);
+}
+
+.add-idea-button:focus {
+  outline: none;
+}

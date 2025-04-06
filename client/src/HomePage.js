@@ -20,13 +20,9 @@ function HomePage() {
       });
   }, []); // Empty array ensures this effect runs only once when the component mounts
 
-
-  return (
-    <div className="homepage">
-      <h1>Idea Rankings</h1>
-      <div className="idea-list">
-        {ideas.map((idea) => (
-          <div key={idea.id} className="idea-card">
+  function Idea({idea}){
+    return(
+      <div key={idea.id} className="idea-card">
             <div className="idea-header">
               <span className="user-name">{idea.rank}</span>
               <span className="roi-effort">
@@ -40,8 +36,24 @@ function HomePage() {
             >
               More Info
             </button>
-          </div>
+        </div>
+    )
+  }
+
+
+  return (
+    <div className="homepage">
+      <h1>Idea Rankings</h1>
+      <div className="idea-list">
+        {ideas.sort((a,b) => a.rank - b.rank)
+        .map((idea) => (
+          <Idea key={idea.rank} idea={idea}/>
         ))}
+      </div>
+      <div className="add-idea">
+        <button className="add-idea-button" onClick={() => navigate('/add-idea')}>
+          +
+        </button>
       </div>
     </div>
   );

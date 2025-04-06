@@ -20,18 +20,6 @@ The following tech stack was used
 * Setting up the docker shared environment
 * Using react for the first time with each team member
 
-## Liscense 
+## Project Description
 
-Copyright [Selfie_A_Day_App] [Yisakor Melke]
-
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agteed to in writing, software 
-  distributionnunder the License is distibuted on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and 
-  limitations under the License.
+*  Idea.AI is a full-stack application that intelligently evaluates, ranks, and prioritizes ideas based on customizable Return On Investment (ROI) and Effort metrics, enhanced by Ollama's Mistral LLM for AI-powered decision-making. The system features a React frontend for user interaction and a Node.js/Express backend that processes data and communicates with a Python-based AI ranking service. Docker ensures consistent development environments, while JSON storage and in-memory caching enable efficient real-time idea management and prioritization.

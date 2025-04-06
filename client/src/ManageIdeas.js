@@ -4,9 +4,8 @@ import "./ManageIdeas.css";
 
 function ManageIdeas() {
   // State for storing ideas
-  const [ideas, setIdeas] = useState([
-    { title: "", resources: "", description: "" },
-  ]);
+  const [ideas, setIdeas] = useState([]);
+
   //loading screen
   const [isLoading, setIsLoading] = useState(false);
 
@@ -53,29 +52,33 @@ function ManageIdeas() {
   };
 
   // Function to save and rank ideas
-  const handleSave = () => {
-    setIsLoading(true); // Show spinner
-  
-    fetch("http://localhost:5001/save-ideas", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ideas, roiWeight, effortWeight }), // Optionally pass weights
+const handleSave = () => {
+  setIsLoading(true); // Show spinner
+
+  // Filter out ideas that are missing title or description
+  const cleanedIdeas = ideas.filter(
+    (idea) => idea.title.trim() !== "" && idea.description.trim() !== ""
+  );
+
+  fetch("http://localhost:5001/save-ideas", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ ideas: cleanedIdeas, roiWeight, effortWeight }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Ideas saved and ranked successfully:", data);
+      setIdeas(data.ideas); // Optionally update state
+      setIsLoading(false); // Hide spinner
+      navigate("/HomePage/");
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Ideas saved and ranked successfully:", data);
-        setIdeas(data.ideas); // If you want to refresh state
-        setIsLoading(false); // Hide spinner
-        navigate("/HomePage/");
-      })
-      .catch((error) => {
-        console.error("Error saving ideas:", error);
-        setIsLoading(false); // Hide spinner on error
-      });
-  };
-  
+    .catch((error) => {
+      console.error("Error saving ideas:", error);
+      setIsLoading(false); // Hide spinner on error
+    });
+};
 
 
   return (

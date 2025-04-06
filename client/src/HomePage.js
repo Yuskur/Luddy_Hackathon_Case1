@@ -6,6 +6,7 @@ function HomePage() {
   const [ideas, setIdeas] = useState([]);
   const navigate = useNavigate();
 
+  // This function will make an api call to fetch the ranked data
   useEffect(() => {
     fetch("http://localhost:5001/ranked-data")
       .then((response) => response.json())
@@ -18,6 +19,7 @@ function HomePage() {
       });
   }, []);
 
+  // This is an Idea component that takes an idea and maps its attributes to a ui
   function Idea({ idea }) {
     const [expanded, setExpanded] = useState(false);
 
@@ -49,6 +51,7 @@ function HomePage() {
     );
   }
 
+  
   return (
     <div className="homepage">
       <h1>Idea Rankings</h1>

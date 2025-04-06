@@ -3,48 +3,48 @@
     "roiWeight": 7,
     "effortWeight": 3
   },
-  "ideas": [
+  "idea": [
     {
       "id": "IDEA-003",
-      "title": "Smart Employee Onboarding",
-      "description": "AI assistant that personalizes onboarding for new hires and automates paperwork.",
-      "resources": "4 developers, 3 months"
+      "title": "Smart Hackathon Onboarding Bot",
+      "description": "An AI assistant that personalizes team matching, event scheduling, and resources for hackathon participants.",
+      "resources": "3 developers, 1 weekend"
     },
     {
       "id": "IDEA-004",
-      "title": "Customer Sentiment Dashboard",
-      "description": "Real-time analysis of customer feedback across all communication channels.",
-      "resources": "2 developers, 2 months"
+      "title": "Real-Time Feedback Dashboard",
+      "description": "A dashboard that collects and analyzes anonymous participant feedback during the hackathon to improve live experience.",
+      "resources": "2 developers, 1 weekend"
     },
     {
       "id": "IDEA-005",
-      "title": "VR Training Simulations",
-      "description": "Virtual reality training for high-risk procedures in a safe environment.",
-      "resources": "5 developers, 6 months"
+      "title": "Virtual Career Fair Room",
+      "description": "A web-based VR experience where students can visit company booths, chat with recruiters, and submit resumes.",
+      "resources": "4 developers, 1 weekend"
     },
     {
       "id": "IDEA-006",
-      "title": "Predictive Maintenance System",
-      "description": "IoT sensors that predict equipment maintenance needs before failures occur.",
-      "resources": "4 developers, 3 months"
+      "title": "Project Health Monitor",
+      "description": "A system that tracks GitHub commit activity, team sentiment, and progress to help mentors support struggling teams.",
+      "resources": "3 developers, 1 weekend"
     },
     {
       "id": "IDEA-007",
-      "title": "Contract Analysis Tool",
-      "description": "AI that reviews legal documents to flag risks and extract key obligations.",
-      "resources": "2 developers, 2 months"
+      "title": "Sponsor-Student Matcher",
+      "description": "AI that matches students to sponsoring companies based on interests, skills, and resumes.",
+      "resources": "2 developers, 1 weekend"
     },
     {
       "id": "IDEA-008",
-      "title": "Carbon Footprint Tracker",
-      "description": "App that monitors company's environmental impact and suggests improvements.",
-      "resources": "3 developers, 3 months"
+      "title": "Green Hack Tracker",
+      "description": "A tool that scores hackathon projects based on their environmental impact and sustainability.",
+      "resources": "2 developers, 1 weekend"
     },
     {
       "id": "IDEA-009",
-      "title": "Meeting Efficiency Assistant",
-      "description": "Tool that takes notes, assigns action items, and follows up after meetings.",
-      "resources": "2 developers, 2 months"
+      "title": "AutoPitch Generator",
+      "description": "Tool that summarizes a team’s GitHub README and progress into a 1-minute pitch deck and script.",
+      "resources": "2 developers, 1 weekend"
     }
   ]
 }

@@ -16,38 +16,35 @@ class Idea(BaseModel):
 
 # Define the prompt to Ollama with the desired structured response format
 prompt = """
-Rank the following ideas based on ROI (Return on Investment) and Effort relative to the other ideas, dont just use the rank to increment the ideas:
-THIS IS A MUST: Do not reuse rank numbers, first count the number of ideas then only use rank numbers once.
-You must rank all ideas. Do not output anything that isn't said in the format below
-Please respond in the following format for each idea:
+You are an AI assistant for a Hackathon organization at Indiana University.
+Your primary role is to help organize and streamline tasks related to planning, 
+promoting, and executing hackathon events. You will assist in evaluating project
+ideas, generating promotional content, managing communications, and coordinating
+event logistics to ensure a successful and engaging experience for all participants.
 
+Your task: Rank the following ideas based on ROI (Return on Investment) and Effort.
+
+⚠️ VERY IMPORTANT: FOLLOW THIS FORMAT EXACTLY. DO NOT ADD EXTRA INDENTATION, QUOTES, OR FORMATTING. 
+DO NOT OUTPUT ANYTHING ON THE SAME LINE AS THE IDEA NUMBER, AND THE TITLE SHOULD BE THE TITLE AND NOT THE DESCRIPTION
+
+FORMAT EXAMPLE:
 Idea 1:
-Title: Ex: Implement a new feature for user account management
-ROI: <ROI>/10
-ROI Reason: <Explanation for the ROI rating and why it ranks higher or lower>
-Effort: <Effort>/10
-Effort Reason: <Explanation for the Effort rating and why it ranks higher or lower>
-Rank: <rank>
+Title: Smart Hackathon Onboarding Bot  
+ROI: 9/10  
+ROI Reason: Improves participant experience, increases engagement, and fosters team collaboration, which can lead to more successful projects and positive word-of-mouth.  
+Effort: 8/10  
+Effort Reason: Requires development of an AI assistant with personalization capabilities, but the payoff is significant.  
+Rank: 1
 
-Idea 2:
-Title: <Title>
-ROI: <ROI>/10
-ROI Reason: <Explanation for the ROI rating and why it ranks higher or lower>
-Effort: <Effort>/10
-Effort Reason: <Explanation for the Effort rating and why it ranks higher or lower>
-Rank: <rank>
+Do not reuse rank numbers. Count how many ideas are given and only use each rank once.
 
-Idea 3:
-Title: <Title>
-ROI: <ROI>/10
-ROI Reason: <Explanation for the ROI rating and why it ranks higher or lower>
-Effort: <Effort>/10
-Effort Reason: <Explanation for the Effort rating and why it ranks higher or lower>
-Rank: <rank>
+DO NOT ADD EXTRA SPACES, DO NOT INDENT. ONLY RETURN RAW TEXT IN THE ABOVE FORMAT.
 
-Please rate each idea and provide the results in the specified format.
+---
 
-Here are the following ideas to rank followed by a number that is the number of ideas, please only use each number once:
+Here are the following ideas to rank (only use the number of ideas provided below):
+
+
 
 """
 

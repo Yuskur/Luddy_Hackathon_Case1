@@ -60,9 +60,10 @@
   padding: 12px 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.08);
   position: sticky;
-  top: 92px; /* header height */
+  top: 92px; /* Adjust this depending on your header height */
   z-index: 999;
 }
+
 
 .nav-link {
   color: #333;
@@ -90,4 +91,23 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+header {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(to right, #3a4e8c, #2c3e70);
+  color: white;
+  padding: 20px;
+  z-index: 1000;
+}
+
+nav {
+  position: sticky;
+  top: 100px; /* adjust based on header height */
+  background-color: white;
+  z-index: 999;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }

@@ -57,8 +57,8 @@ function HomePage() {
         <button className="add-idea-button" onClick={() => setAddIdea(true)}>
           +
         </button>
-        <AddIdea trigger={addIdea} setTrigger={setAddIdea} />
       </div>
+      <AddIdea trigger={addIdea} setTrigger={setAddIdea} />
     </div>
   );
 }

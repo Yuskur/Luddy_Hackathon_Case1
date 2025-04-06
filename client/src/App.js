@@ -2,12 +2,9 @@ import './App.css';
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./HomePage";
-<<<<<<< HEAD
 import MoreInfo from "./MoreInfo";  
 import ManageIdeas from "./ManageIdeas";  
-=======
 import AddIdea from './AddIdea';
->>>>>>> 7b907a6 (.)
 
 //import MoreInfoPage from "./MoreInfoPage";   <Route path="/more-info" element={<MoreInfoPage />} />
 
@@ -24,14 +21,11 @@ function App() {
      <Router>
         <Routes>
           {/* Define routes */}
-<<<<<<< HEAD
           <Route path="/HomePage" element={<HomePage />} />
           <Route path="/MoreInfo" element={<MoreInfo />} />
           <Route path="/ManageIdeas" element={<ManageIdeas />} />
-=======
           <Route path="/HomePage" element={<HomePage/>} />
           <Route path="/AddIdea" element={AddIdea}/>
->>>>>>> 7b907a6 (.)
         </Routes>
       </Router>  
     </div>

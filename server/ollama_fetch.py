@@ -53,7 +53,9 @@ Rank: <rank>
 
 Please rate each idea and provide the results in the specified format.
 
-Here are the following ideas to rank followed by a number that is the number of ideas, please only use each number once:
+Here are the following ideas to rank followed by a number that is the number of ideas, please only use each number once.
+IF THERE ARE NO IDEAS, DO NOT MAKE IDEAS UP. USE THE NUMBER OF IDEAS TO BASE HOW MANY IDEAS YOU ARE RETURNING.
+
 
 """
 

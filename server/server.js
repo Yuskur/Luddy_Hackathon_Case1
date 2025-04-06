@@ -77,6 +77,7 @@ function runRankingScript(callback) {
 
   python.stdout.on('data', (data) => {
     output += data.toString();
+    console.log(data.toString());
   });
 
   python.stderr.on('data', (data) => {

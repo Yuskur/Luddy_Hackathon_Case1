@@ -31,8 +31,7 @@ async function run() {
 
 // Work to return the json data
 app.get('/ranked-data', (req, res) => {
-    
-    res.json(ollama_data); // Send the ranked data as a JSON response
+    res.json(ollama_data);
 })
 
 run().catch(console.dir);

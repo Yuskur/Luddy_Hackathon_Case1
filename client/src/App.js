@@ -2,7 +2,11 @@ import './App.css';
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./HomePage";
+<<<<<<< HEAD
 import MoreInfo from "./MoreInfo";  
+=======
+//import MoreInfoPage from "./MoreInfoPage";   <Route path="/more-info" element={<MoreInfoPage />} />
+>>>>>>> 6759983 (.)
 
 
 function App() {

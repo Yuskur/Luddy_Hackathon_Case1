@@ -28,6 +28,11 @@ function HomePage() {
     },
   ];
 
+  //api call
+
+  
+
+
   const navigate = useNavigate();
 
   return (

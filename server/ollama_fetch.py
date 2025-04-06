@@ -24,25 +24,25 @@ Please respond in the following format for each idea:
 Idea 1:
 Title: Ex: Implement a new feature for user account management
 ROI: <ROI>/10
-ROI Reason: <Explanation for the ROI rating>
+ROI Reason: <Explanation for the ROI rating and why it ranks higher or lower>
 Effort: <Effort>/10
-Effort Reason: <Explanation for the Effort rating>
+Effort Reason: <Explanation for the Effort rating and why it ranks higher or lower>
 Rank: <rank>
 
 Idea 2:
 Title: <Title>
 ROI: <ROI>/10
-ROI Reason: <Explanation for the ROI rating>
+ROI Reason: <Explanation for the ROI rating and why it ranks higher or lower>
 Effort: <Effort>/10
-Effort Reason: <Explanation for the Effort rating>
+Effort Reason: <Explanation for the Effort rating and why it ranks higher or lower>
 Rank: <rank>
 
 Idea 3:
 Title: <Title>
 ROI: <ROI>/10
-ROI Reason: <Explanation for the ROI rating>
+ROI Reason: <Explanation for the ROI rating and why it ranks higher or lower>
 Effort: <Effort>/10
-Effort Reason: <Explanation for the Effort rating>
+Effort Reason: <Explanation for the Effort rating and why it ranks higher or lower>
 Rank: <rank>
 
 Please rate each idea and provide the results in the specified format.
@@ -55,7 +55,7 @@ Here are the following ideas to rank followed by a number that is the number of 
 with open('ideas.json', 'r') as file:
     ideas_data = json.load(file)
 
-idea_count = 0
+
 idea_count = 0
 for idea in ideas_data["ideas"]:  # Accessing the list inside the dictionary
     prompt = prompt + idea['title'] + " - Description: " + idea['description'] + "\n"
@@ -66,7 +66,7 @@ weights = ideas_data.get("weights", {})
 roi_weight = weights.get("roiWeight", 5)
 effort_weight = weights.get("effortWeight", 5)
 
-prompt += f"\nUse these weights as guidance:\nROI Weight: {roi_weight}/10\nEffort Weight: {effort_weight}/10\n\n"
+prompt += f"\nUse these weights as guidance for the overall rank, first rank each idea and use the roi/effort weights to determine the final rank:\nROI Weight: {roi_weight}/10\nEffort Weight: {effort_weight}/10\n\n"
 
 
 # Call Ollama's API to get a response

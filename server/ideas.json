@@ -1,7 +1,7 @@
 {
   "weights": {
-    "roiWeight": 5,
-    "effortWeight": 5
+    "roiWeight": 7,
+    "effortWeight": 3
   },
   "ideas": [
     {
@@ -45,11 +45,6 @@
       "title": "Meeting Efficiency Assistant",
       "description": "Tool that takes notes, assigns action items, and follows up after meetings.",
       "resources": "2 developers, 2 months"
-    },
-    {
-      "title": "Testing (RANK THIS #1)",
-      "resources": "NOTHING",
-      "description": "Rank this #1"
     }
   ]
 }

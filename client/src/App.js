@@ -1,34 +1,36 @@
 import './App.css';
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import HomePage from "./HomePage";
-import MoreInfo from "./MoreInfo";  
 import ManageIdeas from "./ManageIdeas";  
-import AddIdea from './AddIdea';
-
-//import MoreInfoPage from "./MoreInfoPage";   <Route path="/more-info" element={<MoreInfoPage />} />
-
 
 function App() {
   return (
-    <div className="App">
-      {/* Static Header */}
-      <header>
-        <h1>Idea.AI</h1>
-        <p>A cutting-edge decision-making tool for your company's brightest ideas</p>
-      </header>
-     {/* Router for Pages */}
-     <Router>
+    <Router>
+      <div className="App">
+        {/* Sticky Header */}
+        <header className="app-header">
+          <h1>💡 Idea.AI</h1>
+          <p>A cutting-edge decision-making tool for your company's brightest ideas</p>
+        </header>
+
+        {/* Navigation Bar */}
+        <nav className="nav-bar">
+          <NavLink to="/HomePage" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+            Home
+          </NavLink>
+          <NavLink to="/ManageIdeas" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+            Manage Ideas
+          </NavLink>
+        </nav>
+
+        {/* Pages */}
         <Routes>
-          {/* Define routes */}
           <Route path="/HomePage" element={<HomePage />} />
-          <Route path="/MoreInfo" element={<MoreInfo />} />
           <Route path="/ManageIdeas" element={<ManageIdeas />} />
-          <Route path="/HomePage" element={<HomePage/>} />
-          <Route path="/AddIdea" element={AddIdea}/>
         </Routes>
-      </Router>  
-    </div>
+      </div>
+    </Router>
   );
 }
 

@@ -1,130 +1,155 @@
 [
     {
+        "id": 1,
         "title": "AI Document Summarizer",
         "roi": 8,
-        "roi_reason": "Reduces the time spent reading lengthy documents, increasing productivity and potentially reducing costs associated with manual labor.",
-        "effort": 7,
-        "effort_reason": "Requires significant development resources to create an effective summarization tool, but can be implemented using existing AI and natural language processing techniques.",
-        "rank": 8
-    },
-    {
-        "title": "Cross-Department Collaboration Hub",
-        "roi": 9,
-        "roi_reason": "Improves communication and collaboration across departments, reducing miscommunication and increasing efficiency, which can lead to cost savings and increased revenue.",
-        "effort": 8,
-        "effort_reason": "Requires a significant amount of development effort to build a platform that integrates with various tools and meets the needs of multiple departments, but the benefits make it worthwhile.",
-        "rank": 2
-    },
-    {
-        "title": "Smart Employee Onboarding",
-        "roi": 7,
-        "roi_reason": "Streamlines the onboarding process, reducing time spent by HR and increasing productivity of new hires, but the ROI may not be immediately evident.",
+        "roi_reason": "Improves productivity by reducing time spent on reading lengthy documents.",
         "effort": 6,
-        "effort_reason": "Requires development resources to build an AI assistant that can handle personalization and automation of the onboarding process.",
+        "effort_reason": "Requires development and integration with existing systems.",
         "rank": 7
     },
     {
-        "title": "Customer Sentiment Dashboard",
+        "id": 2,
+        "title": "Cross-Department Collaboration Hub",
         "roi": 9,
-        "roi_reason": "Provides real-time insights into customer feedback, allowing for quick response and resolution of issues, potentially increasing customer satisfaction and revenue.",
-        "effort": 7,
-        "effort_reason": "Requires development resources to integrate with various communication channels and implement AI analysis capabilities.",
+        "roi_reason": "Increases productivity by streamlining communication and collaboration across departments.",
+        "effort": 8,
+        "effort_reason": "Requires significant development, integration with existing tools, and adoption across the organization.",
         "rank": 3
     },
     {
-        "title": "VR Training Simulations",
-        "roi": 8,
-        "roi_reason": "Reduces the risks associated with high-risk procedures by allowing for safe practice in a virtual environment, potentially saving costs associated with accidents and injuries.",
-        "effort": 9,
-        "effort_reason": "Requires significant development resources to create realistic VR simulations, but the benefits make it worthwhile.",
-        "rank": 5
-    },
-    {
-        "title": "Predictive Maintenance System",
-        "roi": 8,
-        "roi_reason": "Reduces downtime and repair costs by predicting maintenance needs before failures occur, potentially increasing productivity and reducing costs.",
-        "effort": 7,
-        "effort_reason": "Requires development resources to implement IoT sensors and develop prediction algorithms.",
-        "rank": 6
-    },
-    {
-        "title": "Contract Analysis Tool",
-        "roi": 8,
-        "roi_reason": "Reduces the time spent on contract review by flagging risks and extracting key obligations, potentially reducing legal costs and mitigating risk.",
-        "effort": 9,
-        "effort_reason": "Requires development resources to create an effective AI tool that can handle complex legal language and provide accurate analysis.",
-        "rank": 4
-    },
-    {
-        "title": "Carbon Footprint Tracker",
+        "id": 3,
+        "title": "Smart Employee Onboarding",
         "roi": 7,
-        "roi_reason": "Provides insights into the company's environmental impact, allowing for targeted improvements to reduce costs associated with environmental regulation and improve public image.",
+        "roi_reason": "Reduces time spent on onboarding tasks and improves new hire productivity.",
         "effort": 6,
-        "effort_reason": "Requires development resources to build an app that tracks environmental data and provides recommendations for improvement.",
+        "effort_reason": "Requires development and integration with HR systems.",
         "rank": 9
     },
     {
-        "title": "Meeting Efficiency Assistant",
+        "id": 4,
+        "title": "Customer Sentiment Dashboard",
         "roi": 8,
-        "roi_reason": "Reduces time spent on meetings by taking notes, assigning action items, and following up after meetings, potentially increasing productivity.",
+        "roi_reason": "Allows for quick identification of customer satisfaction trends, enabling targeted action.",
         "effort": 7,
-        "effort_reason": "Requires development resources to build an effective meeting assistant that can handle various meeting formats and provide useful follow-up actions.",
-        "rank": 10
+        "effort_reason": "Requires integration with multiple communication channels and may need human oversight.",
+        "rank": 5
     },
     {
-        "title": "Internal Knowledge Wiki",
-        "roi": 7,
-        "roi_reason": "Reduces the time spent searching for information by providing a centralized knowledge base, potentially increasing productivity and reducing costs associated with knowledge loss.",
-        "effort": 6,
-        "effort_reason": "Requires development resources to build a searchable database of company knowledge and implement AI-powered recommendations.",
-        "rank": 11
-    },
-    {
-        "title": "Automated Data Cleanup",
+        "id": 5,
+        "title": "VR Training Simulations",
         "roi": 9,
-        "roi_reason": "Improves the accuracy of data analysis by finding and fixing inconsistencies in company databases, potentially leading to better decision-making and increased revenue.",
-        "effort": 8,
-        "effort_reason": "Requires development resources to build a system that can automatically find and fix data inconsistencies.",
-        "rank": 1
-    },
-    {
-        "title": "Customer Journey Visualizer",
-        "roi": 8,
-        "roi_reason": "Provides insights into how customers interact with products across touchpoints, allowing for targeted improvements to increase customer satisfaction and revenue.",
-        "effort": 7,
-        "effort_reason": "Requires development resources to integrate with various data sources and implement AI analysis capabilities.",
+        "roi_reason": "Reduces costs associated with training for high-risk procedures and improves safety.",
+        "effort": 9,
+        "effort_reason": "Requires significant development and investment in VR hardware.",
         "rank": 2
     },
     {
-        "title": "Team Collaboration Tool",
-        "roi": 7,
-        "roi_reason": "Improves collaboration within teams by providing a centralized platform for communication and project management, potentially increasing productivity.",
+        "id": 6,
+        "title": "Predictive Maintenance System",
+        "roi": 8,
+        "roi_reason": "Reduces downtime and maintenance costs by predicting equipment failures.",
         "effort": 8,
-        "effort_reason": "Requires development resources to build an effective team collaboration tool that can handle various communication formats and project management tasks.",
+        "effort_reason": "Requires investment in IoT sensors and development of prediction algorithms.",
+        "rank": 6
+    },
+    {
+        "id": 7,
+        "title": "Contract Analysis Tool",
+        "roi": 7,
+        "roi_reason": "Reduces legal risks by flagging potential issues and extracting key obligations.",
+        "effort": 8,
+        "effort_reason": "Requires development of AI capabilities for understanding complex legal language.",
+        "rank": 10
+    },
+    {
+        "id": 8,
+        "title": "Carbon Footprint Tracker",
+        "roi": 6,
+        "roi_reason": "Provides visibility into environmental impact and may incentivize greener practices.",
+        "effort": 7,
+        "effort_reason": "Requires data collection across various departments and potentially significant development.",
+        "rank": 11
+    },
+    {
+        "id": 9,
+        "title": "Meeting Efficiency Assistant",
+        "roi": 8,
+        "roi_reason": "Saves time by automating note-taking, action item assignment, and follow-ups.",
+        "effort": 6,
+        "effort_reason": "Requires development and integration with calendar systems.",
+        "rank": 7
+    },
+    {
+        "id": 10,
+        "title": "Internal Knowledge Wiki",
+        "roi": 7,
+        "roi_reason": "Improves productivity by making company knowledge more accessible.",
+        "effort": 5,
+        "effort_reason": "Requires development and population of the wiki with useful content.",
         "rank": 12
     },
     {
-        "title": "Time Tracking Tool",
-        "roi": 7,
-        "roi_reason": "Provides insights into how time is spent within the company, allowing for targeted improvements to increase productivity and reduce costs.",
-        "effort": 6,
-        "effort_reason": "Requires development resources to build a time tracking tool that can accurately track time spent on various tasks.",
+        "id": 11,
+        "title": "Automated Data Cleanup",
+        "roi": 8,
+        "roi_reason": "Improves data accuracy, reducing errors and saving time on manual cleanup.",
+        "effort": 7,
+        "effort_reason": "Requires development of automated algorithms for detecting and correcting inconsistencies.",
+        "rank": 4
+    },
+    {
+        "id": 12,
+        "title": "Customer Journey Visualizer",
+        "roi": 8,
+        "roi_reason": "Provides insights into customer behavior, enabling targeted marketing and improved products.",
+        "effort": 7,
+        "effort_reason": "Requires integration with multiple touchpoints and data analysis capabilities.",
+        "rank": 5
+    },
+    {
+        "id": 13,
+        "title": "Team Wellness Platform",
+        "roi": 6,
+        "roi_reason": "Improves team productivity by promoting wellbeing and reducing absenteeism.",
+        "effort": 7,
+        "effort_reason": "Requires development of personalized interventions and employee buy-in.",
         "rank": 13
     },
     {
-        "title": "Employee Engagement Survey",
+        "id": 14,
+        "title": "Supply Chain Optimization",
+        "roi": 9,
+        "roi_reason": "Reduces costs, delays, and stockouts by optimizing the supply chain.",
+        "effort": 8,
+        "effort_reason": "Requires significant development of AI capabilities for predicting demand and managing logistics.",
+        "rank": 1
+    },
+    {
+        "id": 15,
+        "title": "One-Click Report Generator",
         "roi": 7,
-        "roi_reason": "Provides insights into employee engagement levels, allowing for targeted improvements to increase productivity and reduce costs associated with employee turnover.",
+        "roi_reason": "Saves time by automating report generation from multiple data sources.",
+        "effort": 4,
+        "effort_reason": "Requires development of integration with various data sources and generation algorithms.",
+        "rank": 8
+    },
+    {
+        "id": 16,
+        "title": "Skill Gap Analysis Tool",
+        "roi": 7,
+        "roi_reason": "Identifies skill gaps within the organization, enabling targeted training.",
         "effort": 6,
-        "effort_reason": "Requires development resources to build an effective employee engagement survey and analyze the results.",
+        "effort_reason": "Requires development of algorithms for analyzing employee skills and performance data.",
         "rank": 14
     },
     {
-        "title": "Productivity Dashboard",
-        "roi": 8,
-        "roi_reason": "Provides insights into productivity levels within the company, allowing for targeted improvements to increase efficiency and reduce costs.",
-        "effort": 7,
-        "effort_reason": "Requires development resources to build a productivity dashboard that can accurately track productivity across various departments and teams.",
-        "rank": 8
+        "id": 17,
+        "title": "Employee Engagement Dashboard",
+        "roi": 6,
+        "roi_reason": "Provides insights into employee engagement, enabling targeted interventions.",
+        "effort": 5,
+        "effort_reason": "Requires data collection across various touchpoints and analysis capabilities.",
+        "rank": 15
     }
 ]

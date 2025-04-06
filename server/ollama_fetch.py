@@ -6,6 +6,7 @@ from pydantic import BaseModel
 
 # Define the Pydantic model for each idea
 class Idea(BaseModel):
+    id: int
     title: str
     roi: int  # ROI out of 10
     roi_reason: str  # Reasoning behind the ROI score
@@ -84,8 +85,9 @@ rank_pattern = r"Rank:\s*(\d+)"
 
 # Split by idea (each idea is separated by a new line)
 ideas_raw = response_content.split("\n\n")  # Split by double newline
-
+i = 0
 for idx, idea_block in enumerate(ideas_raw, start=1):
+    
     # Extract the title using regex
     title_match = re.search(title_pattern, idea_block)
     roi_match = re.search(roi_pattern, idea_block)
@@ -101,9 +103,10 @@ for idx, idea_block in enumerate(ideas_raw, start=1):
     effort = int(effort_match.group(1)) if effort_match else 0
     effort_reason = effort_reason_match.group(1).strip() if effort_reason_match else "No reason provided"
     rank = int(rank_match.group(1)) if rank_match else idx  # Default to idx if no rank provided
-
+    i += 1
     # Add the structured data to the list of ideas
     ideas.append({
+        'id': i,
         'title': title,
         'roi': roi,
         'roi_reason': roi_reason,
@@ -111,6 +114,7 @@ for idx, idea_block in enumerate(ideas_raw, start=1):
         'effort_reason': effort_reason,
         'rank': rank,  # Rank based on the extracted rank
     })
+    
 
 # Save the structured ideas to a JSON file
 with open('ranked_ideas.json', 'w') as json_file:

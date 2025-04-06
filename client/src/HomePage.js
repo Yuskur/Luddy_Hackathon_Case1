@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
+import AddIdea from "./AddIdea";
 
 function HomePage() {
   // State to store ranked ideas from backend
   const [ideas, setIdeas] = useState([]);
+  const [addIdea, setAddIdea] = useState(false);
   const navigate = useNavigate();
 
   // Fetch data from the backend when the component mounts
@@ -52,9 +54,10 @@ function HomePage() {
         ))}
       </div>
       <div className="add-idea">
-        <button className="add-idea-button" onClick={() => navigate('/add-idea')}>
+        <button className="add-idea-button" onClick={() => setAddIdea(true)}>
           +
         </button>
+        <AddIdea trigger={addIdea} setTrigger={setAddIdea} />
       </div>
     </div>
   );

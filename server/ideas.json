@@ -39,17 +39,6 @@
       "title": "Green Hack Tracker",
       "description": "A tool that scores hackathon projects based on their environmental impact and sustainability.",
       "resources": "2 developers, 1 weekend"
-    },
-    {
-      "id": "IDEA-009",
-      "title": "AutoPitch Generator",
-      "description": "Tool that summarizes a team’s GitHub README and progress into a 1-minute pitch deck and script.",
-      "resources": "2 developers, 1 weekend"
-    },
-    {
-      "title": "Team building ai",
-      "resources": "make this up",
-      "description": "make this up"
     }
   ]
 }

@@ -60,7 +60,7 @@
   padding: 12px 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.08);
   position: sticky;
-  top: 92px; /* Adjust this depending on your header height */
+  top: 92px; 
   z-index: 999;
 }
 
@@ -105,7 +105,7 @@ header {
 
 nav {
   position: sticky;
-  top: 100px; /* adjust based on header height */
+  top: 100px; 
   background-color: white;
   z-index: 999;
   padding: 10px 0;

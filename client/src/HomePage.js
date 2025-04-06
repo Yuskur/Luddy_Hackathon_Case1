@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
 function HomePage() {
-<<<<<<< HEAD
   // Mock data for ideas
   const ideas = [
     {
@@ -30,29 +29,10 @@ function HomePage() {
   ];
 
   //api call
-
   
 
 
-=======
-  // State to store ranked ideas from backend
-  const [ideas, setIdeas] = useState([]);
->>>>>>> 3143ad6 (add logic to run python script and add cors)
   const navigate = useNavigate();
-
-  // Fetch data from the backend when the component mounts
-  useEffect(() => {
-    // Fetching ranked ideas from the backend API
-    fetch("http://localhost:3000/ranked-data")
-      .then((response) => response.json())
-      .then((data) => {
-        setIdeas(data); // Store the ranked ideas in state
-      })
-      .catch((error) => {
-        console.error("Error fetching data from backend:", error);
-      });
-  }, []); // Empty array ensures this effect runs only once when the component mounts
-
 
   return (
     <div className="homepage">
@@ -61,7 +41,7 @@ function HomePage() {
         {ideas.map((idea) => (
           <div key={idea.id} className="idea-card">
             <div className="idea-header">
-              <span className="user-name">{idea.rank}</span>
+              <span className="user-name">{idea.userName}</span>
               <span className="roi-effort">
                 ROI: {idea.roi}/10 | Effort: {idea.effort}/10
               </span>

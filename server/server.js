@@ -34,7 +34,9 @@ const spawn = require("child_process").spawn;
 const pythonProcess = spawn('python3',["server/ollama_fetch.py"]);
 
 const cors = require('cors');
-app.use(cors());  // Enable CORS for all requests
+app.use(cors({
+    origin: 'http://localhost:3000',
+}));  // Enable CORS for all requests
 
 
 

@@ -49,6 +49,7 @@ app.post('/save-ideas', (req, res) => {
     ideas: sanitizedIdeas
   };
 
+  // Write into the file called ideas.json and run the ranked scripts to rank the ideas inside of ideas.json and return a ranked list
   fs.writeFile(ideasPath, JSON.stringify(payload, null, 2), 'utf-8', (err) => {
     if (err) {
       console.error('Error saving ideas:', err);

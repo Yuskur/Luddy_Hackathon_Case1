@@ -45,24 +45,6 @@
       "title": "AutoPitch Generator",
       "description": "Tool that summarizes a team’s GitHub README and progress into a 1-minute pitch deck and script.",
       "resources": "2 developers, 1 weekend"
-    },
-    {
-      "id": "IDEA-010",
-      "title": "Lost & Found AI",
-      "description": "Image recognition tool that helps match lost items (uploaded by attendees) with found item photos submitted by staff or volunteers.",
-      "resources": "2 developers, 1 weekend"
-    },
-    {
-      "id": "IDEA-011",
-      "title": "Team Chemistry Analyzer",
-      "description": "AI that analyzes Slack or Discord messages (with consent) to measure team collaboration, detect conflicts early, and suggest communication tips.",
-      "resources": "2 developers, 1 weekend"
-    },
-    {
-      "id": "IDEA-012",
-      "title": "Hackathon Memory Maker",
-      "description": "AI tool that auto-generates a highlight reel from photo uploads, social media posts, and livestream footage.",
-      "resources": "3 developers, 1 weekend"
     }
   ]
 }

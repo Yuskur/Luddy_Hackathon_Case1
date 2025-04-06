@@ -88,7 +88,9 @@ function ManageIdeas() {
   
       <div className="manage-ideas">
         <h2>Manage Ideas</h2>
-  
+        <p className="instruction">
+          Adjust the ROI and Effort sliders based on your company's goals
+        </p>
         {/* Sliders for global ROI and Effort weights */}
         <div className="weight-controls">
           <div className="slider-group">
@@ -129,7 +131,7 @@ function ManageIdeas() {
                 name="resources"
                 value={idea.resources}
                 onChange={(e) => handleInputChange(e, index)}
-                placeholder="Resources Needed"
+                placeholder="Resources Needed (Money, Time, Number of Employees)"
               />
               <textarea
                 name="description"
@@ -146,7 +148,7 @@ function ManageIdeas() {
         </div>
   
         {/* Buttons for adding ideas and saving */}
-        <button className="add-idea" onClick={addNewIdea}>
+        <button className="add-idea" onClick={addNewIdea} title="Add an idea">
           +
         </button>
         <button className="save-rank" onClick={handleSave}>

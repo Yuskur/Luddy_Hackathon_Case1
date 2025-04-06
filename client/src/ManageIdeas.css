@@ -1,17 +1,26 @@
 .manage-ideas {
   padding: 20px;
   width: 400px;
-  margin: 0 auto;
+  margin: -25px auto 0;
   background-color: #f9f9f9;
   border-radius: 10px;
 }
 
 .manage-ideas h2 {
   text-align: center;
+  margin: 10px auto 0;
+}
+
+.instruction {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #333;
 }
 
 .weight-controls {
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .slider-group {
@@ -32,7 +41,7 @@
 }
 
 .idea-card {
-  background-color: #fff;
+  background-color: #fafafa;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -40,10 +49,10 @@
 
 .idea-card input,
 .idea-card textarea {
-  width: 100%;
+  width: 95%;
   padding: 8px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #4b6cb7;
   border-radius: 5px;
 }
 
@@ -58,7 +67,7 @@ textarea {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 1px;
 }
 
 .delete-button:hover {
@@ -70,7 +79,7 @@ textarea {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #4caf50;
+  background-color: #4b6cb7;
   color: white;
   font-size: 20px;
   border: none;
@@ -81,16 +90,17 @@ textarea {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #1ac87d;
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .save-rank:hover {
-  background-color: #0056b3;
+  background-color: #0f9b53;
 }
 
 

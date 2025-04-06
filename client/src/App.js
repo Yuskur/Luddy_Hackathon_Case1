@@ -2,7 +2,6 @@ import './App.css';
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./HomePage";
-import MoreInfo from "./MoreInfo";  
 
 //import MoreInfoPage from "./MoreInfoPage";   <Route path="/more-info" element={<MoreInfoPage />} />
 
@@ -20,7 +19,6 @@ function App() {
         <Routes>
           {/* Define routes */}
           <Route path="/HomePage" element={<HomePage />} />
-          <Route path="/MoreInfo" element={<MoreInfo />} />
         </Routes>
       </Router>  
     </div>

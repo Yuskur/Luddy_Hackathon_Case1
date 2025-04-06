@@ -33,6 +33,7 @@ function HomePage() {
               </span>
             </div>
             <p className="idea-description">{idea.title}</p>
+            <p>{idea.description}</p>
             <button
               className="more-info-button"
               onClick={() => navigate(`/more-info/`)}

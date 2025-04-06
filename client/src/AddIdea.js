@@ -13,9 +13,9 @@ function AddIdea(props) {
     const handleAddIdea = async (event) => {
         event.preventDefault();
 
-        if (title && roi && effort && description) {
+        if (title && description) {
             try {
-                const response = await fetch('http://localhost:5001/ideas', {
+                const response = await fetch('http://localhost:5001/add-idea', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -51,22 +51,6 @@ function AddIdea(props) {
                             placeholder="Idea Title"
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            type="number"
-                            placeholder="ROI (1-10)"
-                            value={roi}
-                            onChange={(e) => setRoi(e.target.value)}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            type="number"
-                            placeholder="Effort (1-10)"
-                            value={effort}
-                            onChange={(e) => setEffort(e.target.value)}
                         />
                     </div>
                     <div className="form-group">

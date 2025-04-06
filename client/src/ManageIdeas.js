@@ -7,6 +7,9 @@ function ManageIdeas() {
   const [ideas, setIdeas] = useState([
     { title: "", resources: "", description: "" },
   ]);
+  //loading screen
+  const [isLoading, setIsLoading] = useState(false);
+
 
   // State for ROI and Effort weights (sliders)
   const [roiWeight, setRoiWeight] = useState(5);
@@ -17,8 +20,12 @@ function ManageIdeas() {
     fetch("http://localhost:5001/ideas-data")
       .then((response) => response.json())
       .then((data) => {
-        setIdeas(data); // Store the ideas in state
-      })
+        setIdeas(data.ideas); // only set the array of ideas
+        if (data.weights) {
+          setRoiWeight(data.weights.roiWeight || 5);
+          setEffortWeight(data.weights.effortWeight || 5);
+        }
+      })      
       .catch((error) => {
         console.error("Error fetching data from backend:", error);
       });
@@ -47,95 +54,107 @@ function ManageIdeas() {
 
   // Function to save and rank ideas
   const handleSave = () => {
-  // Send the updated ideas to the backend to save them into ideas.json
-  fetch("http://localhost:5001/save-ideas", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ ideas, roiWeight, effortWeight }), // Send the ideas and weights
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Ideas saved and ranked successfully:", data);
-      setIdeas(data.ideas); // Update the ideas state with ranked data
-      navigate("/HomePage/"); // Navigate to HomePage after saving and ranking
+    setIsLoading(true); // Show spinner
+  
+    fetch("http://localhost:5001/save-ideas", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ideas, roiWeight, effortWeight }), // Optionally pass weights
     })
-    .catch((error) => {
-      console.error("Error saving ideas:", error);
-    });
-};
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Ideas saved and ranked successfully:", data);
+        setIdeas(data.ideas); // If you want to refresh state
+        setIsLoading(false); // Hide spinner
+        navigate("/HomePage/");
+      })
+      .catch((error) => {
+        console.error("Error saving ideas:", error);
+        setIsLoading(false); // Hide spinner on error
+      });
+  };
+  
 
 
   return (
-    <div className="manage-ideas">
-      <h2>Manage Ideas</h2>
-
-      {/* Sliders for global ROI and Effort weights */}
-      <div className="weight-controls">
-        <div className="slider-group">
-          <label>ROI Weight: {roiWeight}</label>
-          <input
-            type="range"
-            min="1"
-            max="10"
-            value={roiWeight}
-            onChange={(e) => setRoiWeight(Number(e.target.value))}
-          />
+    <>
+      {isLoading && (
+        <div className="loading-overlay">
+          <div className="spinner"></div>
         </div>
-        <div className="slider-group">
-          <label>Effort Weight: {effortWeight}</label>
-          <input
-            type="range"
-            min="1"
-            max="10"
-            value={effortWeight}
-            onChange={(e) => setEffortWeight(Number(e.target.value))}
-          />
-        </div>
-      </div>
-
-      {/* Existing Ideas list */}
-      <div className="idea-list">
-        {ideas.map((idea, index) => (
-          <div key={index} className="idea-card">
+      )}
+  
+      <div className="manage-ideas">
+        <h2>Manage Ideas</h2>
+  
+        {/* Sliders for global ROI and Effort weights */}
+        <div className="weight-controls">
+          <div className="slider-group">
+            <label>ROI Weight: {roiWeight}</label>
             <input
-              type="text"
-              name="title"
-              value={idea.title}
-              onChange={(e) => handleInputChange(e, index)}
-              placeholder="Title"
+              type="range"
+              min="1"
+              max="10"
+              value={roiWeight}
+              onChange={(e) => setRoiWeight(Number(e.target.value))}
             />
-            <input
-              type="text"
-              name="resources"
-              value={idea.resources}
-              onChange={(e) => handleInputChange(e, index)}
-              placeholder="Resources Needed"
-            />
-            <textarea
-              name="description"
-              value={idea.description}
-              onChange={(e) => handleInputChange(e, index)}
-              placeholder="Description"
-            />
-            {/* Delete button */}
-            <button className="delete-button" onClick={() => handleDelete(index)}>
-              Delete
-            </button>
           </div>
-        ))}
+          <div className="slider-group">
+            <label>Effort Weight: {effortWeight}</label>
+            <input
+              type="range"
+              min="1"
+              max="10"
+              value={effortWeight}
+              onChange={(e) => setEffortWeight(Number(e.target.value))}
+            />
+          </div>
+        </div>
+  
+        {/* Existing Ideas list */}
+        <div className="idea-list">
+          {ideas.map((idea, index) => (
+            <div key={index} className="idea-card">
+              <input
+                type="text"
+                name="title"
+                value={idea.title}
+                onChange={(e) => handleInputChange(e, index)}
+                placeholder="Title"
+              />
+              <input
+                type="text"
+                name="resources"
+                value={idea.resources}
+                onChange={(e) => handleInputChange(e, index)}
+                placeholder="Resources Needed"
+              />
+              <textarea
+                name="description"
+                value={idea.description}
+                onChange={(e) => handleInputChange(e, index)}
+                placeholder="Description"
+              />
+              {/* Delete button */}
+              <button className="delete-button" onClick={() => handleDelete(index)}>
+                Delete
+              </button>
+            </div>
+          ))}
+        </div>
+  
+        {/* Buttons for adding ideas and saving */}
+        <button className="add-idea" onClick={addNewIdea}>
+          +
+        </button>
+        <button className="save-rank" onClick={handleSave}>
+          Save/Rank
+        </button>
       </div>
-
-      {/* Buttons for adding ideas and saving */}
-      <button className="add-idea" onClick={addNewIdea}>
-        +
-      </button>
-      <button className="save-rank" onClick={handleSave}>
-        Save/Rank
-      </button>
-    </div>
+    </>
   );
-}
+  }
 
 export default ManageIdeas;

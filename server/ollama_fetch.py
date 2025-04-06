@@ -56,10 +56,18 @@ with open('ideas.json', 'r') as file:
     ideas_data = json.load(file)
 
 idea_count = 0
-for idea in ideas_data:
+idea_count = 0
+for idea in ideas_data["ideas"]:  # Accessing the list inside the dictionary
     prompt = prompt + idea['title'] + " - Description: " + idea['description'] + "\n"
-    idea_count += 1  # Increment idea_count properly
+    idea_count += 1
 prompt = prompt + "Idea Count: " + str(idea_count)
+
+weights = ideas_data.get("weights", {})
+roi_weight = weights.get("roiWeight", 5)
+effort_weight = weights.get("effortWeight", 5)
+
+prompt += f"\nUse these weights as guidance:\nROI Weight: {roi_weight}/10\nEffort Weight: {effort_weight}/10\n\n"
+
 
 # Call Ollama's API to get a response
 response = ollama.chat(model='mistral', messages=[

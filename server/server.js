@@ -13,7 +13,7 @@ app.use(cors({ origin: 'http://localhost:3000' }));
 
 let lastRankedIdeas = null; // Live in-memory cache
 
-// Serve raw (unranked) ideas
+// Serve raw (unranked) ideas + weights
 app.get('/ideas-data', (req, res) => {
   const ideasPath = path.join(__dirname, 'ideas.json');
   const ideas = JSON.parse(fs.readFileSync(ideasPath, 'utf-8'));
@@ -31,7 +31,7 @@ app.get('/ranked-data', (req, res) => {
 
 // Save ideas and trigger ranking
 app.post('/save-ideas', (req, res) => {
-  const { ideas } = req.body;
+  const { ideas, roiWeight, effortWeight } = req.body;
 
   if (!ideas || !Array.isArray(ideas)) {
     return res.status(400).json({ error: 'Invalid ideas data format' });
@@ -40,13 +40,22 @@ app.post('/save-ideas', (req, res) => {
   const sanitizedIdeas = ideas.map(({ roi, effort, ...rest }) => rest);
   const ideasPath = path.join(__dirname, 'ideas.json');
 
-  fs.writeFile(ideasPath, JSON.stringify(sanitizedIdeas, null, 2), 'utf-8', (err) => {
+  // Save ideas along with weights
+  const payload = {
+    weights: {
+      roiWeight,
+      effortWeight
+    },
+    ideas: sanitizedIdeas
+  };
+
+  fs.writeFile(ideasPath, JSON.stringify(payload, null, 2), 'utf-8', (err) => {
     if (err) {
       console.error('Error saving ideas:', err);
       return res.status(500).json({ error: 'Error saving ideas' });
     }
 
-    console.log('Ideas saved. Re-ranking...');
+    console.log('Ideas and weights saved. Re-ranking...');
 
     runRankingScript((err, rankedIdeas) => {
       if (err) {

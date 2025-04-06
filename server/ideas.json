@@ -1,49 +1,55 @@
-[
-  {
-    "id": "IDEA-003",
-    "title": "Smart Employee Onboarding",
-    "description": "AI assistant that personalizes onboarding for new hires and automates paperwork.",
-    "resources": "4 developers, 3 months"
+{
+  "weights": {
+    "roiWeight": 5,
+    "effortWeight": 5
   },
-  {
-    "id": "IDEA-004",
-    "title": "Customer Sentiment Dashboard",
-    "description": "Real-time analysis of customer feedback across all communication channels.",
-    "resources": "2 developers, 2 months"
-  },
-  {
-    "id": "IDEA-005",
-    "title": "VR Training Simulations",
-    "description": "Virtual reality training for high-risk procedures in a safe environment.",
-    "resources": "5 developers, 6 months"
-  },
-  {
-    "id": "IDEA-006",
-    "title": "Predictive Maintenance System",
-    "description": "IoT sensors that predict equipment maintenance needs before failures occur.",
-    "resources": "4 developers, 3 months"
-  },
-  {
-    "id": "IDEA-007",
-    "title": "Contract Analysis Tool",
-    "description": "AI that reviews legal documents to flag risks and extract key obligations.",
-    "resources": "2 developers, 2 months"
-  },
-  {
-    "id": "IDEA-008",
-    "title": "Carbon Footprint Tracker",
-    "description": "App that monitors company's environmental impact and suggests improvements.",
-    "resources": "3 developers, 3 months"
-  },
-  {
-    "id": "IDEA-009",
-    "title": "Meeting Efficiency Assistant",
-    "description": "Tool that takes notes, assigns action items, and follows up after meetings.",
-    "resources": "2 developers, 2 months"
-  },
-  {
-    "title": "Testing (RANK THIS #1)",
-    "resources": "NOTHING",
-    "description": "Rank this #1"
-  }
-]
+  "ideas": [
+    {
+      "id": "IDEA-003",
+      "title": "Smart Employee Onboarding",
+      "description": "AI assistant that personalizes onboarding for new hires and automates paperwork.",
+      "resources": "4 developers, 3 months"
+    },
+    {
+      "id": "IDEA-004",
+      "title": "Customer Sentiment Dashboard",
+      "description": "Real-time analysis of customer feedback across all communication channels.",
+      "resources": "2 developers, 2 months"
+    },
+    {
+      "id": "IDEA-005",
+      "title": "VR Training Simulations",
+      "description": "Virtual reality training for high-risk procedures in a safe environment.",
+      "resources": "5 developers, 6 months"
+    },
+    {
+      "id": "IDEA-006",
+      "title": "Predictive Maintenance System",
+      "description": "IoT sensors that predict equipment maintenance needs before failures occur.",
+      "resources": "4 developers, 3 months"
+    },
+    {
+      "id": "IDEA-007",
+      "title": "Contract Analysis Tool",
+      "description": "AI that reviews legal documents to flag risks and extract key obligations.",
+      "resources": "2 developers, 2 months"
+    },
+    {
+      "id": "IDEA-008",
+      "title": "Carbon Footprint Tracker",
+      "description": "App that monitors company's environmental impact and suggests improvements.",
+      "resources": "3 developers, 3 months"
+    },
+    {
+      "id": "IDEA-009",
+      "title": "Meeting Efficiency Assistant",
+      "description": "Tool that takes notes, assigns action items, and follows up after meetings.",
+      "resources": "2 developers, 2 months"
+    },
+    {
+      "title": "Testing (RANK THIS #1)",
+      "resources": "NOTHING",
+      "description": "Rank this #1"
+    }
+  ]
+}

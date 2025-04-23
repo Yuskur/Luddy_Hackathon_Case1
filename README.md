@@ -2,7 +2,7 @@
 
 The following functionality is completed
 
-* [Add Idea] Ai agent ranking system for 
+* [Add Idea] Ai agent ranking system for ranking ideas
 * [Rank ideas] Ranks ideas evaluated by rank, and prioritizes idas
 * [Weight edits sliders] Edit the weights the ai agent uses to rank ideas
 
